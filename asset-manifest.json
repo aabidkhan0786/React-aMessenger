@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/React-aMessenger/static/css/main.16fe86db.chunk.css",
+    "main.js": "/React-aMessenger/static/js/main.60dfa168.chunk.js",
+    "main.js.map": "/React-aMessenger/static/js/main.60dfa168.chunk.js.map",
+    "runtime-main.js": "/React-aMessenger/static/js/runtime-main.fcfaecb0.js",
+    "runtime-main.js.map": "/React-aMessenger/static/js/runtime-main.fcfaecb0.js.map",
+    "static/css/2.b14f1a68.chunk.css": "/React-aMessenger/static/css/2.b14f1a68.chunk.css",
+    "static/js/2.9884aed4.chunk.js": "/React-aMessenger/static/js/2.9884aed4.chunk.js",
+    "static/js/2.9884aed4.chunk.js.map": "/React-aMessenger/static/js/2.9884aed4.chunk.js.map",
+    "index.html": "/React-aMessenger/index.html",
+    "precache-manifest.7adc9cff2640ef63212385d45bd649c5.js": "/React-aMessenger/precache-manifest.7adc9cff2640ef63212385d45bd649c5.js",
+    "service-worker.js": "/React-aMessenger/service-worker.js",
+    "static/css/2.b14f1a68.chunk.css.map": "/React-aMessenger/static/css/2.b14f1a68.chunk.css.map",
+    "static/css/main.16fe86db.chunk.css.map": "/React-aMessenger/static/css/main.16fe86db.chunk.css.map",
+    "static/js/2.9884aed4.chunk.js.LICENSE.txt": "/React-aMessenger/static/js/2.9884aed4.chunk.js.LICENSE.txt",
+    "static/media/login.css": "/React-aMessenger/static/media/1.90c3a1df.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fcfaecb0.js",
+    "static/css/2.b14f1a68.chunk.css",
+    "static/js/2.9884aed4.chunk.js",
+    "static/css/main.16fe86db.chunk.css",
+    "static/js/main.60dfa168.chunk.js"
+  ]
+}

@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect} from 'react'
+import Navbar from './components/Header/Navbar'
+import {Switch,Route, Redirect} from 'react-router-dom'
+import Home from './components/Header/Home'
+import Login from './components/Header/Login'
+import PrivateRoute from "../src/components/PrivateRoute"
+import {useDispatch,useSelector} from "react-redux"
+import {isUserLoggedIn} from './Redux/Actions/Authaction';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    const dispatch = useDispatch();
+    const auth = useSelector(state => state.auth);
+
+    useEffect(()=>{
+        if(!auth.authenticated){
+          dispatch(isUserLoggedIn())
+        }
+      },[])
+
+    return (
+        <>
+           <Navbar/>
+           <Switch>
+               <PrivateRoute exact path="/" component={Home}/>
+                <Route exact path="/login" component={Login}/>
+                <Redirect to="/"/>
+           </Switch>
+
+        </>
+    )
 }
 
-export default App;
+export default App

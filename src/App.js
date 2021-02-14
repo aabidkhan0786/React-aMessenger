@@ -25,6 +25,7 @@ const App = () => {
                <PrivateRoute exact path="/" component={Home}/>
                 <Route exact path="/login" component={Login}/>
                 <Redirect to="/"/>
+                aabid
            </Switch>
 
         </>

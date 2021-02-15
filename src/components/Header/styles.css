@@ -1,0 +1,275 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient( 109.6deg,  rgba(238,58,136,1) 11.2%, rgba(128,162,245,1) 91.1% );
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+}
+
+.navbar{
+    position: fixed;
+    top:5vh;
+    height:60px;
+    width:80%;
+    font-family: 'Reggae One', cursive;
+    left:10%;
+}
+
+.glass{
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    backdrop-filter: blur(80px);
+    border:3px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(45,55,68,0.0.3);
+}
+
+.neon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0 20px;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 0 0 20px #ff0000;
+}
+.neon::after{
+    content: 'aMessenger';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: -1;
+    color: #ff0000;
+    filter: blur(15px);
+}
+.neon::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fe3a3a;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40px);
+}
+
+
+.main_content{
+    top:20vh;
+    width:80%;
+    height:450px;
+    position: relative;
+    font-family: 'Merriweather', serif;
+}
+
+.sub_nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid hotpink;
+    z-index: 10;
+    place-items: center;
+
+}
+
+.fas{
+    cursor: pointer;
+}
+
+.short_div{
+    display: flex;
+    justify-content: space-between;
+}
+.sub_nav h5{
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    font-style:italic;
+}
+.sub_nav .logout{
+    color: black;
+    font-size: 18px;
+    font-family: 'Merriweather', serif;
+    
+}
+
+.sub_nav .logout:hover{
+    font-size: 20px;
+    text-shadow: 0 0 20px #ff0000;
+    
+}
+
+.sub_nav .div_1{
+    display: flex;
+    flex-direction: row;
+}
+.online{
+	display :flex;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #16e316;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 #16e316;
+}
+
+.offline{
+	display :flex;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 red;
+}
+
+.div_2{
+    height:350px;
+    width:300px;
+    overflow-y: scroll;
+    border: 2px solid hotpink;
+    background-image: linear-gradient( 109.6deg,  rgba(238,58,136,1) 11.2%, rgba(128,162,245,1) 91.1% );
+    
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    /* background: hotpink; */
+    background-image: linear-gradient( 109.6deg,  rgba(238,58,136,1) 11.2%, rgba(128,162,245,1) 91.1% );
+  }
+  
+
+.show{
+    position: absolute;
+    top:60px;
+    left:40px; 
+}
+
+.hide{
+    position: absolute;
+    top:60px;
+    left:-900px;
+}
+
+
+
+.chat_screen .div_4{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.cons{
+    height: 280px ;
+    overflow-y: auto;
+}
+
+
+.form{
+    position: absolute;
+    top:20vh;
+    /* left:10%; */
+    height: 450px;
+    /* width: 60%; */
+
+}
+
+.input_form{
+    width:80%;
+    border: none;
+    outline:none;
+    border-bottom: 2px solid hotpink;
+    background-color: transparent;
+    text-align: center;
+    color:black;
+}
+
+.input_form:hover{
+    background-color: whitesmoke;
+    border-bottom: 3px solid hotpink;
+}
+
+.btn{
+    width:80%;
+}
+
+.link{
+    color: black;
+    
+}
+.link:hover{
+    color: black;
+    
+}
+
+.welcome_text{
+    margin-top:200px;
+    /* font-size: 16px; */
+}
+
+@media only screen and (max-width: 768px) {
+   
+    .main_content{
+       
+        height:600px;
+
+    }
+    .div_2{
+        height:450px;
+    }
+    .cons{
+        height:420px;
+    }
+    .welcome_text{
+        margin-top:200px;
+        /* font-size: 1px; */
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+        .navbar{
+            width:100%;
+            left:0%;
+        }
+
+        .main_content{
+       
+            width:100%;
+            height:550px;
+    
+        }
+        .cons{
+            height:350px;
+        }
+        .log_btn{
+            display: none;
+        }
+
+        .welcome_text{
+            margin-top:200px;
+            font-size: 16px;
+        }
+
+        .div_2{
+            height:450px;
+        }
+
+}

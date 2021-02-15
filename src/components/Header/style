@@ -15,16 +15,13 @@
    transition: .5s;
 }
 
-
-
-
-
 body{
     margin: 0;
     padding: 0;
     /* background: url(./bg.jpg); */
     background-size: cover;
     font-family: 'Comfortaa', cursive;
+	background-image: radial-gradient( circle farthest-corner at 11.7% 80.6%,  rgba(249,185,255,1) 0%, rgba(177,172,255,1) 49.3%, rgba(98,203,255,1) 89% );
 }
 .neon{
     position: absolute;

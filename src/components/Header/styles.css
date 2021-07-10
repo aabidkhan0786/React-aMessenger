@@ -69,11 +69,12 @@ body{
 
 
 .main_content{
-    top:20vh;
+    top:16vh;
     width:80%;
-    height:450px;
+    height:600px;
     position: relative;
     font-family: 'Merriweather', serif;
+    /* background-color: teal; */
 }
 
 .sub_nav{
@@ -114,6 +115,7 @@ body{
 .sub_nav .div_1{
     display: flex;
     flex-direction: row;
+    /* justify-content: center; */
 }
 .online{
 	display :flex;
@@ -176,8 +178,9 @@ body{
 }
 
 .cons{
-    height: 280px ;
+    height: 440px ;
     overflow-y: auto;
+    /* background-color: tomato; */
 }
 
 
@@ -198,10 +201,11 @@ body{
     background-color: transparent;
     text-align: center;
     color:black;
+    /* text-transform: capitalize; */
 }
 
 .input_form:hover{
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     border-bottom: 3px solid hotpink;
 }
 
@@ -221,6 +225,19 @@ body{
 .welcome_text{
     margin-top:200px;
     /* font-size: 16px; */
+}
+
+.glass input{
+    background-color: none;
+}
+
+.btn_send:focus{
+    outline: none;
+    border:none;   
+}
+.btn_send{
+    outline: none;
+    border:none;
 }
 
 @media only screen and (max-width: 768px) {

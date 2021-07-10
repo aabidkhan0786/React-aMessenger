@@ -15,6 +15,14 @@ const Register = () => {
 
   const handleRegister = e => {
     e.preventDefault();
+    if(!fname || !lname || !email || !password){
+      alert("Please Add all fields!")
+      return
+    }
+    if(password.length <= 5){
+      alert("Passowrd Should be 6 digits")
+      return
+    }
     const user = {
       fname, lname, email, password
     }
@@ -36,10 +44,10 @@ const Register = () => {
             <center>
               <form onSubmit={handleRegister}>
                 <h5 className="my-5"><u>Regsiter To aMessenger</u></h5>
-                <input type="text" className="input_form mt-3" placeholder="First Name*" required value={fname} onChange={e => setFname(e.target.value)} />
-                <input type="text" className="input_form mt-4" placeholder="Last Name*" required value={lname} onChange={e => setLname(e.target.value)} />
-                <input type="text" className="input_form mt-4" placeholder="Email*" required value={email} onChange={e => setEmail(e.target.value)} />
-                <input type="password" className="input_form mt-4" placeholder="Password*" required value={password} onChange={e => setPassword(e.target.value)} />
+                <input type="text" className="input_form mt-3 text-capitalize" placeholder="First Name*"  value={fname} onChange={e => setFname(e.target.value)} />
+                <input type="text" className="input_form mt-4 text-capitalize" placeholder="Last Name*"  value={lname} onChange={e => setLname(e.target.value)} />
+                <input type="text" className="input_form mt-4" placeholder="Email*"  value={email} onChange={e => setEmail(e.target.value)} />
+                <input type="password" className="input_form mt-4" placeholder="Password*"  value={password} onChange={e => setPassword(e.target.value)} />
                 <button className="btn btn-block btn-danger mt-4" type="submit">Sign Up</button>
                 <h5 className="mt-4">Already Registered ? <Link to="/login" className="link mt-5">LogIn</Link></h5>
               </form>

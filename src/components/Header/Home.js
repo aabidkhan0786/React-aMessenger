@@ -105,8 +105,6 @@ const Home = () => {
 
                                 <i className="fas fa-bars pt-1 " onClick={showSidebar}></i>
                             }
-
-
                             <h5 className="ml-2 text-capitalize">
                                 {auth.authenticated ? <>
                                     <span>
@@ -121,7 +119,6 @@ const Home = () => {
                             </> : null
                         }
                     </div>
-
 
                     <div className={sidebar ? "show" : "hide"}>
                         <div className="div_2">
@@ -149,7 +146,7 @@ const Home = () => {
                             <div className="sub_nav mt-2">
                                 <div className="div_1">
                                     <Avatar size="50" round={true} name={userChat} className="mr-3" />
-                                    <p className="ml-2 pt-3 text-capitalize">{userChat}</p>
+                                    <p className="ml-2 pt-3 text-capitalize text-center">{userChat}</p>
                                 </div>
                                 {user.isOnline ? <span className="float-right my-3 online">  </span> :
                                     <span className="float-right my-3 offline">  </span>}
@@ -159,7 +156,7 @@ const Home = () => {
                                     <center>
                                         <h4 className="welcome_text">Select User From Menu Icon to chat <ChatIcon />
                                             <br /><br />
-                                App is Developed By:<b style={{ color: 'black' }}><u> Abdul Aabid Khan</u></b>
+                                            App is Developed By:<b style={{ color: 'black' }}><u> Abdul Aabid Khan</u></b>
                                         </h4>
                                     </center>
                                 </div>
@@ -177,30 +174,34 @@ const Home = () => {
                                                 <p className="px-2" >{con.message}</p>
 
                                             </div>
-                                        )}</ScrollableFeed>
+                                        )}
+                                    </ScrollableFeed>
                                 </div>
                                 : ""
                         }
 
                         {
                             startChat ? <>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Write Your Message...." aria-label="Recipient's username" aria-describedby="button-addon2"
-                                        value={message} onChange={(e) => setMessage(e.target.value)} />
-                                    <div class="input-group-append">
-                                        <button class="btn btn-info" type="button" id="button-addon2"><SendIcon onClick={sendMessage} /></button>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" className="form-control" placeholder={`Text Message  #${userChat}`} value={message} onChange={(e) => setMessage(e.target.value)} />
+                                    <div className="input-group-append">
+                                        <span className="input-group-text" >
+                                            <button className="btn_send" onClick={sendMessage} type="buton">
+                                                Send <i className="fas fa-angle-double-up pl-2"></i>
+                                            </button>
+                                        </span>
+
                                     </div>
                                 </div>
-                            </> : null}
+                            </>
+                                : null}
 
                     </div>
-
-
                 </div>
-
             </div>
-
-
         </>
     )
 }

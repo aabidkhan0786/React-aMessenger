@@ -5,22 +5,12 @@ import { isUserLoggedIn, signIn } from '../../Redux/Actions/Authaction';
 import { Link } from 'react-router-dom'
 
 
-
-
-
-
 const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth);
-
-
-
-
-
-
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -35,9 +25,6 @@ const Login = () => {
     }
 
     dispatch(signIn({ email, password }));
-
-
-
   }
 
   if (auth.authenticated) {
@@ -47,7 +34,7 @@ const Login = () => {
   return (
     <>
 
-      <div className="row-fluid center">
+      <div className="row-fluid">
         <div className="col-lg-4 col-md-6 col-12 mx-auto">
           <div className="form glass">
             <center>

@@ -163,7 +163,7 @@ const Home = () => {
                                                 <h4 className="welcome_text">Select User From Menu Icon to chat <ChatIcon />
                                                     <br /><br />
                                                     App is Developed By:
-                                                    <a href="https://aabidkhan0786.github.io/aPortfolio.github.io/" data-tip="Click to visit portfolio" data-place="right">
+                                                    <a href="https://aabidkhan0786.github.io/aPortfolio.github.io/" target="_blank" data-tip="Click to visit portfolio" data-place="right">
                                                         <b style={{ color: 'black' }}><u> Abdul Aabid Khan</u></b>
                                                     </a><br />
                                                     <div className="socail_icons m-4">

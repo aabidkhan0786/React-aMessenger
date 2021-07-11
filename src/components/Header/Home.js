@@ -23,16 +23,9 @@ const User = props => {
     return (
         <>
             <div style={{ cursor: 'pointer' }} onClick={() => onClick(user)}>
-                {/* <div className="d-flex flex-row">
-                    <div className="">
-                        <Avatar size="30" round={true} name={name} />
-                        <p className="ml-2 text-capitalize">{name}</p>
-                    </div>
-                    {user.isOnline ? <span className="float-right online">  </span> : <span className="float-right  offline"></span>}
-                </div> */}
                 <div className="d-flex flex-row m-3 user_name ">
                     <Avatar size="30" round={true} name={name} />
-                    <p className="ml-2 text-capitalize h5">{name}</p>
+                    <p className="ml-2 text-capitalize ">{name}</p>
                     {user.isOnline ? <span className="float-right online ml-auto mt-2">  </span> : <span className="float-right ml-auto  offline mt-2"></span>}
                 </div>
             </div>
@@ -93,7 +86,7 @@ const Home = () => {
         setMessage(chosenEmoji && chosenEmoji.emoji)
     };
 
-    const filterUser = user.users.filter(user=>(
+    const filterUser = user.users.filter(user => (
         user.firstName.toLowerCase().includes(search.toLowerCase())
     ))
     return (
@@ -124,10 +117,10 @@ const Home = () => {
                         <div className="user_list d-flex flex-column border-50 glass shadow-lg rounded ">
                             <div className="">
                                 <HighlightOffIcon style={{ cursor: "pointer" }} onClick={showSidebar} className="float-right ml-auto" />
-                                <h4 className="text-center "><u>List Of User</u></h4>
-                            </div>                              
+                                <h5 className="text-center "><u>List Of User</u></h5>
+                            </div>
                             <center>
-                                <input type="text" placeholder="Find friends" className="input_form" onChange={e=>setSearch(e.target.value)} />
+                                <input type="text" placeholder="Find friends" className="input_form" onChange={e => setSearch(e.target.value)} />
                             </center>
                             <div className="min_height" >
                                 {
@@ -160,7 +153,7 @@ const Home = () => {
                                     <>
                                         <div className="div_3 my-5 ">
                                             <center>
-                                                <h4 className="welcome_text">Select User From Menu Icon to chat <ChatIcon />
+                                                <h5 className="welcome_text">Select User From Menu Icon to chat <ChatIcon />
                                                     <br /><br />
                                                     App is Developed By:
                                                     <a href="https://aabidkhan0786.github.io/aPortfolio.github.io/" target="_blank" data-tip="Click to visit portfolio" data-place="right">
@@ -169,22 +162,21 @@ const Home = () => {
                                                     <div className="socail_icons m-4">
                                                         Also find me on : <br />
                                                         <a data-tip="Gmail" data-type="error" href="mailto:khanaab786@gmail.com" target="_blank">
-                                                            <i style={{ color: 'black' }} class="far fa-envelope mt-1 h2 p-2 border-50 glass mr-2 shadow-lg  rounded"></i>
-
+                                                            <i style={{ color: 'black' }} class="far fa-envelope mt-1 h3 p-2 border-50 glass mr-2 shadow-lg  rounded"></i>
                                                         </a>
                                                         <a data-tip="Github" href="https://github.com/aabidkhan0786" target="_blank">
-                                                            <i style={{ color: 'black' }} class="fab fa-github-square h2 p-2 border-50 glass mr-2 shadow-lg  rounded"></i>
+                                                            <i style={{ color: 'black' }} class="fab fa-github-square h3 p-2 border-50 glass mr-2 shadow-lg  rounded"></i>
                                                         </a>
                                                         <a data-tip="LinkedIn" data-type="info" href="https://www.linkedin.com/in/abdul-aabid-khan-4185851b0/" target="_blank">
 
-                                                            <i style={{ color: 'black' }} class="fab fa-linkedin p-2 h2 border-50 glass mr-2 shadow-lg  rounded"></i>
+                                                            <i style={{ color: 'black' }} class="fab fa-linkedin p-2 h3 border-50 glass mr-2 shadow-lg  rounded"></i>
                                                         </a>
                                                         <a data-tip="Instagram" data-type="warning" href="https://www.instagram.com/_khan_aabid_/" target="_blank">
 
-                                                            <i style={{ color: 'black' }} class="fab fa-instagram p-2 h2 border-50 glass mr-2 shadow-lg  rounded"></i>
+                                                            <i style={{ color: 'black' }} class="fab fa-instagram p-2 h3 border-50 glass mr-2 shadow-lg  rounded"></i>
                                                         </a>
                                                     </div>
-                                                </h4>
+                                                </h5>
                                             </center>
                                         </div>
                                     </>
@@ -222,30 +214,30 @@ const Home = () => {
                         }
                         {
                             startChat ? <>
-                            {
-                                !sidebar &&
-                                <>
-                                <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text">
-                                            <button className="btn_send" onClick={() => setEmoji(!emoji)} type="buton">
-                                                {emoji ? <HighlightOffIcon /> : <InsertEmoticonIcon />}
-                                            </button>
-                                        </span>
-                                    </div>
-                                    <textarea type="text" className="form-control" placeholder={`Text Message  #${userChat}`} value={message} onChange={(e) => setMessage(e.target.value)} />
-                                    <div className="input-group-append">
-                                        <span className="input-group-text">
-                                            <button className="btn_send" onClick={sendMessage} type="buton">
-                                                Send <i className="fas fa-angle-double-up pl-2"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                                </>
-                            }
+                                {
+                                    !sidebar &&
+                                    <>
+                                        <div className="input-group mb-3">
+                                            <div className="input-group-prepend">
+                                                <span className="input-group-text">
+                                                    <button className="btn_send" onClick={() => setEmoji(!emoji)} type="buton">
+                                                        {emoji ? <HighlightOffIcon /> : <InsertEmoticonIcon />}
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <textarea type="text" className="form-control" placeholder={`Text Message  #${userChat}`} value={message} onChange={(e) => setMessage(e.target.value)} />
+                                            <div className="input-group-append">
+                                                <span className="input-group-text">
+                                                    <button className="btn_send" onClick={sendMessage} type="buton">
+                                                        Send <i className="fas fa-angle-double-up pl-2"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </>
+                                }
                             </>
-                        : null
+                                : null
                         }
                     </div>
                 </div>

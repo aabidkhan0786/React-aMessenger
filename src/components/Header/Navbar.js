@@ -1,16 +1,8 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, Link } from 'react-router-dom'
-import { userLogOut } from '../../Redux/Actions/Authaction'
 import "../Header/styles.css"
-import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+
 
 const Navbar = () => {
-
-    const auth = useSelector(state => state.auth)
-    const dispatch = useDispatch();
-
-
 
     return (
         <>

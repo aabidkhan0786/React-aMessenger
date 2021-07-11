@@ -20,6 +20,7 @@ export default (state=initialState,action)=>{
                 conversations : action.payload.conversations
             }
             break;
+        default: console.log(state)
     }
 
     return state;

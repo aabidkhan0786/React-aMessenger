@@ -4,7 +4,6 @@ const initialState = {
     lastName :"",
     email :"",
     authenticated:false,
-    authenticated:false,
     error:null
 }
 
@@ -52,6 +51,7 @@ export default  (state=initialState,action)=>{
                 error : action.payload.error
             }
             break;
+            default: console.log(state)
     }
     return state;
 

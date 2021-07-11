@@ -189,11 +189,12 @@ body{
 
 }
 
+
 .input_form{
     width:80%;
     border: none;
     outline:none;
-    border-bottom: 2px solid hotpink;
+    border-bottom: 2px solid black;
     background-color: transparent;
     text-align: center;
     color:black;
@@ -202,7 +203,7 @@ body{
 
 .input_form:hover{
     /* background-color: whitesmoke; */
-    border-bottom: 3px solid hotpink;
+    border-bottom: 3px solid black;
 }
 
 .btn{
@@ -254,10 +255,9 @@ body{
     /* background-color: tomato; */
     z-index:10;
 }
-.user_name{
-    /* border-bottom: 1px solid hotpink; */
+.min_height{
+    min-height: 40vh;
 }
-
 @media only screen and (max-width: 768px) {
    
     .main_content{ 

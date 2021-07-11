@@ -42,7 +42,7 @@ const Register = () => {
 
       <div className="row-fluid center">
         <div className="col-lg-4 col-md-6 col-12 mx-auto">
-          <div className="form glass">
+          <div className="form border-50 glass shadow-lg rounded">
             <center>
               <form onSubmit={handleRegister}>
                 <h5 className="my-5"><u>Regsiter To aMessenger</u></h5>

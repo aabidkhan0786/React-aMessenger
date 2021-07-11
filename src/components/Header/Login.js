@@ -36,7 +36,7 @@ const Login = () => {
 
       <div className="row-fluid">
         <div className="col-lg-3 col-md-6 col-12 mx-auto">
-          <div className="form glass">
+          <div className="form border-50 glass shadow-lg rounded">
             <center>
               <form onSubmit={handleLogin}>
                 <h5 className="my-5"><u>LogIn To aMessenger</u></h5>

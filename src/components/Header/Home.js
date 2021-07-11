@@ -15,6 +15,7 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import ReactTooltip from "react-tooltip";
 
+
 const User = props => {
     const { user, onClick } = props;
     const name = `${user.firstName} ${user.lastName}`
@@ -54,6 +55,7 @@ const Home = () => {
     const [message, setMessage] = useState("");
     const [chatUser, setChatUSer] = useState(null);
     const [emoji, setEmoji] = useState(false);
+    const [search, setSearch] = useState('');
 
 
     useEffect(() => {
@@ -64,7 +66,6 @@ const Home = () => {
         setSidebar(!sidebar);
         setIcon(!icon);
     }
-
 
     const chat = user => {
         const name = `${user.firstName} ${user.lastName}`
@@ -91,6 +92,10 @@ const Home = () => {
         setChosenEmoji(emojiObject);
         setMessage(chosenEmoji && chosenEmoji.emoji)
     };
+
+    const filterUser = user.users.filter(user=>(
+        user.firstName.toLowerCase().includes(search.toLowerCase())
+    ))
     return (
         <>
             <div className="row-fluid">
@@ -116,32 +121,19 @@ const Home = () => {
                     </div>
 
                     <div className={sidebar ? "show" : "hide"}>
-                        {/* <div className="div_2 glass">
-                            <div className="short_div my-2">
-                                <h4 className="ml-3 text-center "><u>List Of Users</u></h4>
-                                <i class="fas fa-times pt-1" onClick={showSidebar} ></i>
-                            </div>
-                            {
-                                user.users.length > 0 ?
-                                    <>
-                                        {user.users.map(user =>
-                                            <User user={user} key={user.uid} onClick={chat} />
-                                        )}
-                                    </>
-                                    : null
-                            }
-                        </div> */}
                         <div className="user_list d-flex flex-column border-50 glass shadow-lg rounded ">
                             <div className="">
                                 <HighlightOffIcon style={{ cursor: "pointer" }} onClick={showSidebar} className="float-right ml-auto" />
                                 <h4 className="text-center "><u>List Of User</u></h4>
-                            </div>
-                            <div >
-                                {console.log(user.users)}
+                            </div>                              
+                            <center>
+                                <input type="text" placeholder="Find friends" className="input_form" onChange={e=>setSearch(e.target.value)} />
+                            </center>
+                            <div className="min_height" >
                                 {
                                     user.users.length > 0 ?
                                         <>
-                                            {user.users.map(user =>
+                                            {filterUser.map(user =>
                                                 <User user={user} key={user.uid} onClick={chat} />
                                             )}
                                         </>
@@ -248,13 +240,12 @@ const Home = () => {
                                                 Send <i className="fas fa-angle-double-up pl-2"></i>
                                             </button>
                                         </span>
-
                                     </div>
                                 </div>
                                 </>
                             }
                             </>
-                                : null
+                        : null
                         }
                     </div>
                 </div>

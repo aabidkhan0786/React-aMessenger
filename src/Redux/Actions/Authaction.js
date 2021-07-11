@@ -4,8 +4,7 @@ export const signup = (user)=>{
     return async (dispatch) => {
         const db = firestore();
         dispatch({
-            type: "LOGIN_REQUEST",
-            
+            type: "LOGIN_REQUEST",           
         })
         auth()
         .createUserWithEmailAndPassword(user.email,user.password)
@@ -52,6 +51,10 @@ export const signup = (user)=>{
         .catch(error=>{
             console.log(error);
             alert(error);
+            dispatch({
+                type: "LOGIN_FAIL",
+                payload: {error}
+            })
         })
     }
 }
@@ -62,16 +65,10 @@ export const signIn=(user)=>{
         dispatch({
             type:'LOGIN_REQUEST'
         });
-
-
-        
-
         auth()
         .signInWithEmailAndPassword(user.email,user.password)
         .then((data)=>{
             console.log(data);
-
-
             const db = firestore();
             db.collection('users')
             .doc(data.user.uid)
@@ -97,10 +94,11 @@ export const signIn=(user)=>{
             })
             .catch(error=>{
                 alert(error)
-
+                dispatch({
+                    type:'LOGIN_FAIL',
+                    payload:{error}
+                })
             })
-
-
         })
         .catch(error=>{
             alert(error);
@@ -162,10 +160,7 @@ export const userLogOut = (uid)=>{
         .catch(error=>{
             console.log(error);
             alert(error);
-        })
-
-
-        
+        })        
     }
 }
 

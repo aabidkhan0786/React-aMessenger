@@ -16,7 +16,8 @@ export default  (state=initialState,action)=>{
         case "LOGIN_REQUEST":
             state={
                 ...state,
-                authenticating:true
+                authenticating:true,
+                loading:true
             }
             break;
         case "LOGIN_SUCCESS":
@@ -24,7 +25,8 @@ export default  (state=initialState,action)=>{
                 ...state,
                 ...action.payload.user,
                 authenticating:false,
-                authenticated:true
+                authenticated:true,
+                loading:false
             }
             break;
         case "LOGIN_FAIL":
@@ -32,7 +34,8 @@ export default  (state=initialState,action)=>{
                 ...state,
                 ...action.payload.error,
                 authenticating:false,
-                authenticated:false
+                authenticated:false,
+                loading:false
             }
             break;    
         case "USER_LOGOUT_REQUEST":

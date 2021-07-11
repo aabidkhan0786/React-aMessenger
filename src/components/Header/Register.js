@@ -13,22 +13,24 @@ const Register = () => {
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth)
 
+  console.log(auth.loading);
+
   const handleRegister = e => {
     e.preventDefault();
     if(!fname || !lname || !email || !password){
-      alert("Please Add all fields!")
+      alert("Please add all fields!")
       return
     }
     if(password.length <= 5){
-      alert("Passowrd Should be 6 digits")
+      alert("Passowrd Should be 6 digits or more!")
       return
     }
+
     const user = {
       fname, lname, email, password
     }
     dispatch(signup(user));
   }
-
 
   if (auth.authenticated) {
     return <Redirect to="/" />
@@ -48,12 +50,22 @@ const Register = () => {
                 <input type="text" className="input_form mt-4 text-capitalize" placeholder="Last Name*"  value={lname} onChange={e => setLname(e.target.value)} />
                 <input type="text" className="input_form mt-4" placeholder="Email*"  value={email} onChange={e => setEmail(e.target.value)} />
                 <input type="password" className="input_form mt-4" placeholder="Password*"  value={password} onChange={e => setPassword(e.target.value)} />
-                <button className="btn btn-block btn-danger mt-4" type="submit">Sign Up</button>
+                {
+                  auth.loading ?
+                    <>
+                      <button className="btn btn-block btn-danger mt-4" type="submit">
+                        <div class="d-flex align-items-center">
+                          <strong>Signing Up...</strong>
+                          <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                        </div>
+                      </button>
+                    </>
+                    :
+                    <button className="btn btn-block btn-danger mt-4" type="submit">Sign Up</button>
+                }
                 <h5 className="mt-4">Already Registered ? <Link to="/login" className="link mt-5">LogIn</Link></h5>
               </form>
             </center>
-
-
           </div>
         </div>
       </div>

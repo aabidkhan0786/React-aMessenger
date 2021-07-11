@@ -13,6 +13,7 @@ body{
     width:100vw;
     height:100vh;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 .navbar{
@@ -71,7 +72,7 @@ body{
 .main_content{
     top:16vh;
     width:80%;
-    height:600px;
+    height:611px;
     position: relative;
     font-family: 'Merriweather', serif;
     /* background-color: teal; */
@@ -83,7 +84,6 @@ body{
     border-bottom: 2px solid hotpink;
     z-index: 10;
     place-items: center;
-
 }
 
 .fas{
@@ -164,21 +164,17 @@ body{
 }
 
 .hide{
-    position: absolute;
-    top:60px;
-    left:-900px;
+   display: none;
 }
-
-
 
 .chat_screen .div_4{
     display: flex;
-    justify-content: space-evenly;
-    
+    justify-content: space-evenly;   
 }
 
+
 .cons{
-    height: 440px ;
+    height: 430px ;
     overflow-y: auto;
     /* background-color: tomato; */
 }
@@ -240,12 +236,32 @@ body{
     border:none;
 }
 
+.border_msg{
+    border: 2px solid hotpink;
+    width:100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* background-color: tomato; */
+}
+
+.user_list{
+    width:20vw;
+    height:60vh;
+    display: flex;
+    justify-content: center;    
+    overflow: scroll;
+    scroll-behavior: smooth;
+    /* background-color: tomato; */
+    z-index:10;
+}
+.user_name{
+    /* border-bottom: 1px solid hotpink; */
+}
+
 @media only screen and (max-width: 768px) {
    
-    .main_content{
-       
+    .main_content{ 
         height:600px;
-
     }
     .div_2{
         height:450px;
@@ -256,6 +272,11 @@ body{
     .welcome_text{
         margin-top:200px;
         /* font-size: 1px; */
+    }
+    .user_list{
+        width:40vw;
+        height:60vh;
+
     }
 
 }
@@ -274,7 +295,7 @@ body{
     
         }
         .cons{
-            height:350px;
+            height:365px;
         }
         .log_btn{
             display: none;
@@ -288,5 +309,9 @@ body{
         .div_2{
             height:450px;
         }
-
+        .user_list{
+            width:80vw;
+            height:60vh;
+       
+        }
 }
